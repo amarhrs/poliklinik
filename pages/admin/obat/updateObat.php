@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kemasan = $_POST["kemasan"];
     $harga = $_POST["harga"];
 
-    // Query untuk melakukan update data obat
+    // Query untuk update data obat
     $query = "UPDATE obat SET 
         nama_obat = '$nama_obat', 
         kemasan = '$kemasan', 
@@ -17,14 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Eksekusi query
     if (mysqli_query($mysqli, $query)) {
-        // Jika berhasil, redirect kembali ke halaman index atau sesuaikan dengan kebutuhan Anda
         echo '<script>';
         echo 'alert("Data obat berhasil diubah!");';
         echo 'window.location.href = "index.php";';
         echo '</script>';
         exit();
     } else {
-        // Jika terjadi kesalahan, tampilkan pesan error
         echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
     }
 }

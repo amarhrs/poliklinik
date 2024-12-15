@@ -9,23 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $poli = $_POST["poli"];
     $password = md5($nama);
 
-    // Query untuk menambahkan data obat ke dalam tabel
+    // Query untuk menambahkan data dokter
     $query = "INSERT INTO dokter (nama, password, alamat, no_hp, id_poli) VALUES ('$nama', '$password', '$alamat', '$no_hp', '$poli')";
 
-
-    // if ($koneksi->query($query) === TRUE) {
     // Eksekusi query
     if (mysqli_query($mysqli, $query)) {
-        // Jika berhasil, redirect kembali ke halaman utama atau sesuaikan dengan kebutuhan Anda
-        // header("Location: ../../index.php");
-        // exit();
         echo '<script>';
         echo 'alert("Data dokter berhasil ditambahkan!");';
         echo 'window.location.href = "index.php";';
         echo '</script>';
         exit();
     } else {
-        // Jika terjadi kesalahan, tampilkan pesan error
         echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
     }
 }
