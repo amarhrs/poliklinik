@@ -82,7 +82,7 @@
             <!-- End Riwayat Pasien Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/dokter/profil/index.php">
                     <i class="bi bi-person"></i>
                     <span>Profil</span>
                 </a>
