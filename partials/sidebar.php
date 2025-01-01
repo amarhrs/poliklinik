@@ -52,21 +52,21 @@
     <?php } else if ($_SESSION['akses'] == "dokter") { ?>
         <ul class="sidebar-nav" id="sidebar-nav">
             <li class="nav-item">
-                <a class="nav-link " href="<?= $base_url; ?>pages/dokter/index.php">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/dokter/index.php">
                     <i class="bi bi-grid"></i>
                     <span>Dashboard</span>
                 </a>
             </li><!-- End Dashboard Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
-                    <i class="bi bi-calendar"></i>
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/dokter/jadwalPeriksa/index.php"">
+                    <i class=" bi bi-calendar"></i>
                     <span>Jadwal Periksa</span>
                 </a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/dokter/periksaPasien/index.php">
                     <i class="bi bi-heart-pulse"></i>
                     <span>Periksa Pasien</span>
                 </a>
@@ -74,7 +74,7 @@
             <!-- End Periksa Pasien Nav -->
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/dokter/riwayatPasien/index.php">
                     <i class="bi bi-journal-medical"></i>
                     <span>Riwayat Pasien</span>
                 </a>
@@ -109,7 +109,7 @@
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#">
+                <a class="nav-link collapsed" href="<?= $base_url; ?>pages/pasien/poli/index.php">
                     <i class="bi bi-people"></i>
                     <span>Poli</span>
                 </a>

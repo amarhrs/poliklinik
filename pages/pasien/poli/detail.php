@@ -1,9 +1,7 @@
 <?php
 session_start();
-$id_dokter = $_SESSION['id'];
 $username = $_SESSION['username'];
-$id_poli = $_SESSION['id_poli'];
-
+$idPasien = $_SESSION['id'];
 
 if ($username == "") {
     header("location:../../pages/auth/login.php");
@@ -26,13 +24,33 @@ if ($username == "") {
 <body>
     <?php include '../../../partials/header.php' ?>
     <?php include '../../../partials/sidebar.php' ?>
-    <?php include 'profil.php' ?>
+    <?php include 'riwayat.php' ?>
     <?php include '../../../partials/footer.php' ?>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <?php include '../../../partials/script.php' ?>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#poli').on('change', function() {
+                var poliId = $(this).val();
+
+                // Mengambil data jadwal berdasarkan poli yang dipilih
+                $.ajax({
+                    type: 'POST',
+                    url: 'getJadwal.php',
+                    data: {
+                        poliId: poliId
+                    },
+                    success: function(data) {
+                        $('#jadwal').html(data);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

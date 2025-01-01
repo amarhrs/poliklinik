@@ -4,7 +4,6 @@ $id_dokter = $_SESSION['id'];
 $username = $_SESSION['username'];
 $id_poli = $_SESSION['id_poli'];
 
-
 if ($username == "") {
     header("location:../../pages/auth/login.php");
 }
@@ -26,7 +25,7 @@ if ($username == "") {
 <body>
     <?php include '../../../partials/header.php' ?>
     <?php include '../../../partials/sidebar.php' ?>
-    <?php include 'profil.php' ?>
+    <?php include 'riwayatPasien.php' ?>
     <?php include '../../../partials/footer.php' ?>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
