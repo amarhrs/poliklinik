@@ -28,3 +28,12 @@ klik tombol "Login Sebagai Dokter" dan login dengan masukkan:
   Username : admin
   Password : admin
 ```
+
+## Login Dokter
+
+klik tombol "Login Sebagai Dokter" dan login dengan masukkan:
+
+```bash
+  Username : Azel
+  Password : Azel
+```
