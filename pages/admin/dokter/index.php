@@ -21,6 +21,76 @@ if ($username == "") {
 </head>
 
 <body>
+    <?php
+    if (isset($_GET['success'])) {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Data Dokter Berhasil Ditambahkan",
+                confirmButtonText: "OK"
+            });
+        </script>
+    <?php
+    } elseif (isset($_GET['error'])) {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal Menambahkan Dokter",
+                confirmButtonText: "Coba Lagi"
+            });
+        </script>
+    <?php
+    } elseif (isset($_GET['delete']) && $_GET['delete'] == 'true') {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Data Dokter Berhasil Dihapus",
+                confirmButtonText: "OK"
+            });
+        </script>
+    <?php
+    } elseif (isset($_GET['delete']) && $_GET['delete'] == 'false') {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal Menghapus Dokter",
+                confirmButtonText: "Coba Lagi"
+            });
+        </script>
+    <?php
+    } elseif (isset($_GET['update']) && $_GET['update'] == 'true') {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Data Dokter Berhasil Diupdate",
+                confirmButtonText: "OK"
+            });
+        </script>
+    <?php
+    } elseif (isset($_GET['update']) && $_GET['update'] == 'false') {
+    ?>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            Swal.fire({
+                icon: "error",
+                title: "Gagal Mengupdate Dokter",
+                confirmButtonText: "Coba Lagi"
+            });
+        </script>
+    <?php
+    }
+    ?>
+
     <?php include '../../../partials/header.php' ?>
     <?php include '../../../partials/sidebar.php' ?>
     <?php include 'dokter.php' ?>

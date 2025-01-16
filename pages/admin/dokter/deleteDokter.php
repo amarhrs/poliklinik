@@ -9,14 +9,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "DELETE FROM dokter WHERE id = $id";
 
     // Eksekusi query
+    // if (mysqli_query($mysqli, $query)) {
+    //     echo '<script>';
+    //     echo 'alert("Data dokter berhasil dihapus!");';
+    //     echo 'window.location.href = "index.php";';
+    //     echo '</script>';
+    //     exit();
+    // } else {
+    //     echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
+    // }
+
+    // Eksekusi query
     if (mysqli_query($mysqli, $query)) {
-        echo '<script>';
-        echo 'alert("Data dokter berhasil dihapus!");';
-        echo 'window.location.href = "index.php";';
-        echo '</script>';
+        header('Location: index.php?delete=true');
         exit();
     } else {
-        echo "Error: " . $query . "<br>" . mysqli_error($mysqli);
+        header('Location: index.php?delete=false');
+        exit();
     }
 }
 

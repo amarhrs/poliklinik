@@ -14,5 +14,3 @@ $base_url = 'http://' . $_SERVER['HTTP_HOST'] . '/poliklinik/';
 
 <!-- Template Main JS File -->
 <script src="<?= $base_url; ?>assets/niceadmin/js/main.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
